@@ -1,0 +1,112 @@
+[
+    {
+        "id": "8a95a67161f1b3c0",
+        "type": "tab",
+        "label": "Flow 3-Tablero fecha",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "29d050c5a9614c58",
+        "type": "function",
+        "z": "8a95a67161f1b3c0",
+        "name": "function 1",
+        "func": "var date = new Date(msg.payload)\nmsg.payload = date.toString();\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 220,
+        "wires": [
+            [
+                "19974a9758cddddc",
+                "abcfbe9f18f3670c"
+            ]
+        ]
+    },
+    {
+        "id": "19974a9758cddddc",
+        "type": "ui_text",
+        "z": "8a95a67161f1b3c0",
+        "group": "ead5cccd7d9eebcc",
+        "order": 0,
+        "width": "6",
+        "height": "4",
+        "name": "",
+        "label": "la fecha y hora actual es",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 850,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "abcfbe9f18f3670c",
+        "type": "debug",
+        "z": "8a95a67161f1b3c0",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "aeef6da684b8e86a",
+        "type": "inject",
+        "z": "8a95a67161f1b3c0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 430,
+        "y": 220,
+        "wires": [
+            [
+                "29d050c5a9614c58"
+            ]
+        ]
+    },
+    {
+        "id": "ead5cccd7d9eebcc",
+        "type": "ui_group",
+        "name": "fecha formato legible",
+        "tab": "f9f8f648b2ce61fa",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f9f8f648b2ce61fa",
+        "type": "ui_tab",
+        "name": "flow 3 fecha",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
